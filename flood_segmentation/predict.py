@@ -30,7 +30,7 @@ def analyze_flood_image(image_path: str, output_dir: str) -> dict:
         out_dir.mkdir(parents=True, exist_ok=True)
         
         # Open image to get dimensions
-        img = Image.open(img_path)
+        img = Image.open(img_path).convert("RGB")
         width, height = img.size
         
         # Define output file paths

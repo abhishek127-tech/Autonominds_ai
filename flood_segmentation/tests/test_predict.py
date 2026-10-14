@@ -42,6 +42,20 @@ def test_analyze_flood_image_stub_success(tmp_path):
     assert os.path.exists(result["overlay_path"])
 
 
+def test_analyze_float_tiff_writes_rgb_overlay(tmp_path):
+    from PIL import Image
+
+    image_path = tmp_path / "sar_float.tif"
+    Image.new("F", (16, 12), color=-12.5).save(image_path)
+
+    result = predict.analyze_flood_image(str(image_path), str(tmp_path / "outputs"))
+
+    assert result["status"] == "ok"
+    with Image.open(result["overlay_path"]) as overlay:
+        assert overlay.mode == "RGB"
+        assert overlay.size == (16, 12)
+
+
 def test_analyze_flood_image_corrupt_input(tmp_path):
     image_path = tmp_path / "corrupt.png"
     image_path.write_text("not an image")
