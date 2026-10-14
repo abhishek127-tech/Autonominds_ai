@@ -1,0 +1,10 @@
+{
+  "evaluation_status": "not_evaluated",
+  "dataset": null,
+  "sample_count": 0,
+  "metrics": {
+    "mean_iou": null,
+    "pixel_accuracy": null
+  },
+  "notes": "No trained checkpoint or labeled evaluation set is included."
+}

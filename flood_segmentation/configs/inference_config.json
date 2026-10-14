@@ -1,0 +1,6 @@
+{
+	"model_name": "baseline-threshold-stub",
+	"image_size": 512,
+	"confidence_threshold": 0.5,
+	"normalize_sar": true
+}
