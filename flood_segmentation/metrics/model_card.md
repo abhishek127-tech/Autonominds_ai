@@ -1,24 +1,25 @@
-# Model Card
+# Model Card: FloodSense AI (SegFormer-B0 SAR)
 
-## Model details
+## Overview
 
-The current implementation is a baseline API stub named `baseline-threshold-stub`. It does not load a neural network or checkpoint. For every readable image it emits an all-background mask.
+- **Planned architecture:** SegFormer-B0 adapted for two-channel VV/VH Sentinel-1 SAR input; this architecture is not implemented in the current code.
+- **Current implementation:** `baseline-threshold-stub`, which loads no neural network or checkpoint and emits an all-background mask for readable images.
+- **Task:** Semantic flood segmentation.
+- **Current version:** M0 stub / baseline.
 
-## Intended use
+## Intended Use
 
-The stub is suitable only for exercising the file interface and output format during development. It is not suitable for flood detection, scientific evaluation, emergency response, or operational mapping.
+The planned system is intended to detect water bodies and flood extents from Sentinel-1 SAR imagery, with research and emergency-monitoring workflows as possible applications after appropriate training and validation. The current stub is only suitable for exercising the file interface and output format. It must not be used for flood decisions or emergency response.
 
-## Performance
+## Limitations and Known Failure Cases
 
-No validation results are available. See `metrics.json`; IoU and pixel accuracy are intentionally `null` rather than fabricated.
+- **Stub limitation:** The current version does not perform neural-network inference or detect water.
+- **SAR speckle noise:** Speckle may affect classification boundaries; appropriate preprocessing and validation are still needed.
+- No trained checkpoint, documented training data, or labeled evaluation set is included.
+- The inference configuration is descriptive and is not consumed by `predict.py`.
+- Georeferencing and real-world area calculations are not implemented.
+- No performance scores are available; see `metrics.json`.
 
-## Limitations
+## Evaluation
 
-- No trained weights or training pipeline are included.
-- The inference configuration is descriptive and is not read by `predict.py`.
-- Raster georeferencing and real-world area calculations are not implemented.
-- Results must not be interpreted as verified flood maps.
-
-## Future evaluation
-
-Evaluation requires a documented checkpoint, a held-out labeled dataset, and a reproducible preprocessing and metric protocol.
+Evaluation requires a documented checkpoint, a held-out labeled dataset, and a reproducible preprocessing and metric protocol. The planned dataset is Sen1Floods11; it has not been used to evaluate this stub.

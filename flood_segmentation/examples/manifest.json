@@ -1,6 +1,15 @@
 {
   "schema_version": 1,
-  "dataset": "user-provided sample images",
-  "status": "awaiting licensed sample data",
-  "samples": []
+  "dataset_name": "synthetic-sar-fixture",
+  "planned_dataset": "Sen1Floods11-subset",
+  "status": "synthetic_test_fixture",
+  "samples": [
+    {
+      "filename": "sample_sar_simulated.png",
+      "description": "Synthetic SAR-like grayscale image with a darker flood-shaped region and speckle-like texture. For M0 interface testing only; not real Sentinel-1 or Sen1Floods11 data.",
+      "modality": "Simulated grayscale SAR-like image",
+      "date_collected": null,
+      "date_created": "2026-10-14"
+    }
+  ]
 }

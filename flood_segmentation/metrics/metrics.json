@@ -1,10 +1,16 @@
 {
+  "model_name": "baseline-threshold-stub",
+  "record_date": "2026-10-14",
+  "evaluation_date": null,
   "evaluation_status": "not_evaluated",
   "dataset": null,
+  "planned_dataset": "Sen1Floods11-subset",
   "sample_count": 0,
   "metrics": {
-    "mean_iou": null,
-    "pixel_accuracy": null
+    "flood_iou": null,
+    "overall_accuracy": null,
+    "precision": null,
+    "recall": null
   },
-  "notes": "No trained checkpoint or labeled evaluation set is included."
+  "notes": "No labeled evaluation data or trained checkpoint is included. The stub produces an all-background mask; its scores cannot be calculated without ground-truth labels."
 }
